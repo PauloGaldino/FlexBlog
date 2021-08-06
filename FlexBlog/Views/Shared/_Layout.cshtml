@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - FlexBlog</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shink-to-fit=no" />
+    @*
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    *@
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https: //fonts.googleapis.com/css2? family =400,400i,72 " rel=" stylesheet ">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="superinfo-bg">
+        <div class="superinfo">
+            <p>Seg / Sex 08:00 às 18:00</p>
+            <a href="tel:19989327757"> +55 19 98932-7757</a>
+            <p>Analândia 474, São Joaquim - Santa Bárbara d'Oeste -SP</p>
+        </div>
+    </div>
+    <header class="menu-bg">
+        <div class="menu">
+            <div class="menu-logo">
+                @* <a href="#"> DlexBlog </a>*@
+                <a asp-area="" asp-controller="Home" asp-action="Index">FlexBlog</a>
+            </div>
+       
+        <nav class="menu-nav">
+            @*<div class="container">
+                <a asp-area="" asp-controller="Home" asp-action="Index">FlexBlog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+                </ul>
+                </div>
+                </div>*@
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Produtos">Produtos</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Preco">Preço</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Qualidade">Qualidade</a></li>
+            </ul>
+        </nav>
+         </div>
+    </header>
+    <div class="container">
+        <main role="main" class="body-container">
+            @RenderBody()
+        </main>
+    </div>
+
+    <section class="newsletter">
+		<div class="newsletter-info">
+			<h1>Newsletter</h1>
+			<p>assine e fique por dentro das novidades</p>
+		</div>
+		<form class="newsletter-form">
+			<input type="text" placeholder="Seu e-mail">
+			<button type="submit">Assinar</button>
+		</form>
+	</section>
+
+    <footer class="footer">
+
+        <p> FlexBlog  &copy; Todos os direitos reservados.</p>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
